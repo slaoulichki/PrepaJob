@@ -3,8 +3,10 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class OffreType extends AbstractType
 {
@@ -16,7 +18,9 @@ class OffreType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('date', 'date')
+            ->add('date', DateType::class, array(
+                'format' => 'dd-MM-yyyy',
+            ))
             ->add('lieu')
             ->add('type')
             ->add('description')

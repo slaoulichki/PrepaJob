@@ -36,7 +36,7 @@ class OffreController extends Controller
      */
     public function editoffreAction($id)
     {
-        $form = $this->createForm(Offre:Type::class);
+        $form = $this->createForm(OffreType::class);
 
         return $this->render('AppBundle:Offre:editoffre.html.twig', array(
             'offreForm'=> $form->createView()

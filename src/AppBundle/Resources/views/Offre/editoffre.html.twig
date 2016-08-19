@@ -1,22 +1,23 @@
 {% extends "::base.html.twig" %}
+{% form_theme offreForm 'bootstrap_3_layout.html.twig' %}
 
 {% block title %}Editer offre {id}{% endblock %}
 
 {% block body %}
 <h1>Editer l'offre 1245 :</h1>
 
-    {{ form_start(offreForm, {attr: {novalidate:'novalidate'}}) }}
+    {{ form_start(offreForm, {attr: {novalidate:'novalidate'}})}}
     {{ form_row(offreForm.titre) }}
     {{ form_row(offreForm.societe) }}
     {{ form_row(offreForm.lieu) }}
-    {{ form_row(offreFormForm.date) }}
-    {{ form_row(offreFormForm.type) }}
-    {{ form_row(offreFormForm.description) }}
-    {{ form_row(offreFormForm.categorie) }}
+    {{ form_row(offreForm.date)  }}
+    {{ form_row(offreForm.type) }}
+    {{ form_row(offreForm.description) }}
+    {{ form_row(offreForm.categorie) }}
     <div>
         <button type="submit" class="btn btn-default">Modifier</button>
     </div>
-    {{ form_end(contactForm) }}
+    {{ form_end(offreForm) }}
     {#<form class="col-lg-12 col-md-12 col-sm-12 col-xs-12" name="editOffre" method="post" id="candidatureF" action="listoffre.html.twig">
         <div class="form-group">
             <label>Titre de l'offre</label>
