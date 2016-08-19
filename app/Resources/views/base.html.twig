@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title><!-- {% block title %} --> Bienvenue sur PrepaJob ! <!-- {% endblock %}--> </title>
         <link rel="stylesheet" href="{{ asset('bundles/prepavenirbootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="../../../../style.css">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -54,13 +55,6 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('bundles/prepavenirbootstrap/js/bootstrap.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('#easterEgg').click(function() {
-                $('body').addClass('darkEasterEgg');
-            });
-        });
-    </script>
     <!-- <script src="{{ asset('bundles/prepavenirbootstrap/js/bootstrap.js') }}"></script> -->
     <!-- {% block javascripts %}{% endblock %} -->
     </body>
