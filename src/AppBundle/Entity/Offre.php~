@@ -223,28 +223,5 @@ class Offre
     {
         return $this->categorie;
     }
-
-    /**
-     * Set societe
-     *
-     * @param \AppBundle\Entity\Societe $societe
-     *
-     * @return Offre
-     */
-    public function setSociete(\AppBundle\Entity\Societe $societe = null)
-    {
-        $this->societe = $societe;
-
-        return $this;
-    }
-
-    /**
-     * Get societe
-     *
-     * @return \AppBundle\Entity\Societe
-     */
-    public function getSociete()
-    {
-        return $this->societe;
-    }
 }
+
