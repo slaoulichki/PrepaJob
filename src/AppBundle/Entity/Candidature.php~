@@ -108,5 +108,52 @@ class Candidature
     }
 
 
-}
 
+    /**
+     * Set membre
+     *
+     * @param \AppBundle\Entity\Membre $membre
+     *
+     * @return Candidature
+     */
+    public function setMembre(\AppBundle\Entity\Membre $membre = null)
+    {
+        $this->membre = $membre;
+
+        return $this;
+    }
+
+    /**
+     * Get membre
+     *
+     * @return \AppBundle\Entity\Membre
+     */
+    public function getMembre()
+    {
+        return $this->membre;
+    }
+
+    /**
+     * Set offre
+     *
+     * @param \AppBundle\Entity\Offre $offre
+     *
+     * @return Candidature
+     */
+    public function setOffre(\AppBundle\Entity\Offre $offre = null)
+    {
+        $this->offre = $offre;
+
+        return $this;
+    }
+
+    /**
+     * Get offre
+     *
+     * @return \AppBundle\Entity\Offre
+     */
+    public function getOffre()
+    {
+        return $this->offre;
+    }
+}

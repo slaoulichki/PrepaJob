@@ -14,7 +14,7 @@ class Offre
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="Societe")
+     * @ORM\ManyToOne(targetEntity="Societe", inversedBy="offres")
      */
     protected $societe;
 

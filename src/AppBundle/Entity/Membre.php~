@@ -218,4 +218,3 @@ class Membre
         return $this->msg;
     }
 }
-

@@ -35,8 +35,17 @@ class SocieteController extends Controller
      */
     public function showsocieteAction($id)
     {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Societe');
+
+        $societe = $repository->find($id);
+
+        if (!$societe){
+            // TODO 404
+            throw new NotFoundHttpException('Cette societe n\'existe pas');
+        }
+
         return $this->render('AppBundle:Societe:showsociete.html.twig', array(
-            // ...
+            'societe' => $societe
         ));
     }
 

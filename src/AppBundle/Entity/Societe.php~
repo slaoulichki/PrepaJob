@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Societe
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="societe")
+     */
+    protected $offres;
+
     /**
      * @var int
      *
@@ -63,4 +69,3 @@ class Societe
         return $this->nom;
     }
 }
-

@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Societe
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="Offre", mappedBy="societe")
+     */
+    protected $offres;
+
     /**
      * @var int
      *
@@ -61,5 +67,46 @@ class Societe
     public function getNom()
     {
         return $this->nom;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->offres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add offre
+     *
+     * @param \AppBundle\Entity\Offre $offre
+     *
+     * @return Societe
+     */
+    public function addOffre(\AppBundle\Entity\Offre $offre)
+    {
+        $this->offres[] = $offre;
+
+        return $this;
+    }
+
+    /**
+     * Remove offre
+     *
+     * @param \AppBundle\Entity\Offre $offre
+     */
+    public function removeOffre(\AppBundle\Entity\Offre $offre)
+    {
+        $this->offres->removeElement($offre);
+    }
+
+    /**
+     * Get offres
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOffres()
+    {
+        return $this->offres;
     }
 }
