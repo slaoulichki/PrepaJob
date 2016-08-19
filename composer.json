@@ -32,6 +32,7 @@
     },
     "scripts": {
         "post-install-cmd": [
+						"Bioub\\HerokuBundle\\Composer\\ScriptHandler::buildMySQLEnv",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -40,6 +41,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-update-cmd": [
+					  "Bioub\\HerokuBundle\\Composer\\ScriptHandler::buildMySQLEnv",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -61,7 +63,13 @@
         "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+		        "env-map": {
+		            "database_host": "DATABASE_HOST",
+		            "database_name": "DATABASE_NAME",
+		            "database_user": "DATABASE_USER",
+		            "database_password": "DATABASE_PASSWORD"
+		        }
         },
         "branch-alias": {
             "dev-master": "3.1-dev"
