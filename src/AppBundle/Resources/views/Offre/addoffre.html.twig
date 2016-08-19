@@ -1,7 +1,30 @@
 {% extends "::base.html.twig" %}
+{% form_theme aadoffreForm 'bootstrap_3_layout.html.twig' %}
 
 {% block title %}AppBundle:Offre:addoffre{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Offre:addoffre page</h1>
+
+
+    <div class="container">
+        <div class="col-lg-offset-2 col-lg-8 align-block">
+
+            <h1>Ajouter une offre !</h1>
+            <hr>
+
+    {{ form_start(aadoffreForm, {attr: {novalidate:'novalidate'}})}}
+    {{ form_row(aadoffreForm.titre) }}
+    {{ form_row(aadoffreForm.societe) }}
+    {{ form_row(aadoffreForm.lieu) }}
+    {{ form_row(aadoffreForm.date)  }}
+    {{ form_row(aadoffreForm.type) }}
+    {{ form_row(aadoffreForm.description) }}
+    {{ form_row(aadoffreForm.categorie) }}
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+
+    {{ form_end(aadoffreForm) }}
+        </div>
+    </div>
+
 {% endblock %}

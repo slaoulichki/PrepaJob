@@ -16,8 +16,9 @@ class OffreController extends Controller
      */
     public function addoffreAction()
     {
+        $addform = $this->createForm(OffreType::class);
         return $this->render('AppBundle:Offre:addoffre.html.twig', array(
-            // ...
+            'aadoffreForm'=> $addform->createView()
         ));
     }
 
