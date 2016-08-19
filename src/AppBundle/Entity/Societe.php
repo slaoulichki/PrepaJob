@@ -109,4 +109,9 @@ class Societe
     {
         return $this->offres;
     }
+
+    public function __toString()
+    {
+        return $this->nom;
+    }
 }

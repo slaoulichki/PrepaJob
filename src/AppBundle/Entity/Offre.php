@@ -247,4 +247,6 @@ class Offre
     {
         return $this->societe;
     }
+
+
 }
