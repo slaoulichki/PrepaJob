@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User;
 
 /**
  * Membre
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="membre")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MembreRepository")
  */
-class Membre
+class Membre extends User
 {
     /**
      * @var int
@@ -19,7 +20,7 @@ class Membre
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -35,12 +36,12 @@ class Membre
      */
     private $prenom;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=50)
-     */
-    private $email;
+//    /**
+//     * @var string
+//     *
+//     * @ORM\Column(name="email", type="string", length=50)
+//     */
+//    protected $email;
 
     /**
      * @var \DateTime
@@ -122,29 +123,29 @@ class Membre
         return $this->prenom;
     }
 
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Membre
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
+//    /**
+//     * Set email
+//     *
+//     * @param string $email
+//     *
+//     * @return Membre
+//     */
+//    public function setEmail($email)
+//    {
+//        $this->email = $email;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get email
+//     *
+//     * @return string
+//     */
+//    public function getEmail()
+//    {
+//        return $this->email;
+//    }
 
     /**
      * Set age

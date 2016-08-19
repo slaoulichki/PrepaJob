@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 /**
@@ -21,6 +22,7 @@ class MembreController extends Controller
 
     /**
      * @Route("/edit/{id}")
+     * @Security("has_role('ROLE_USER')")
      */
     public function editmembreAction($id)
     {
